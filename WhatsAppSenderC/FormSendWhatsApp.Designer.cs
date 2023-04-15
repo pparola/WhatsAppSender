@@ -28,131 +28,211 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnlBrowser = new System.Windows.Forms.Panel();
-            this.btnEnviar = new System.Windows.Forms.Button();
-            this.iTelefono = new System.Windows.Forms.TextBox();
-            this.iMensaje = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.iTiempo = new System.Windows.Forms.NumericUpDown();
-            this.lblMensaje = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.iTiempo)).BeginInit();
-            this.SuspendLayout();
+            pnlBrowser = new Panel();
+            btnEnviar = new Button();
+            iMensaje = new TextBox();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            iTiempo = new NumericUpDown();
+            lblMensaje = new Label();
+            openFileExcel = new OpenFileDialog();
+            cExcelSelect = new Button();
+            iTelefono = new TextBox();
+            iArchivo = new TextBox();
+            label4 = new Label();
+            cSiguiente = new Button();
+            cAnterior = new Button();
+            iContador = new TextBox();
+            ((System.ComponentModel.ISupportInitialize)iTiempo).BeginInit();
+            SuspendLayout();
             // 
             // pnlBrowser
             // 
-            this.pnlBrowser.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlBrowser.Location = new System.Drawing.Point(196, 0);
-            this.pnlBrowser.Name = "pnlBrowser";
-            this.pnlBrowser.Size = new System.Drawing.Size(604, 450);
-            this.pnlBrowser.TabIndex = 0;
+            pnlBrowser.Dock = DockStyle.Right;
+            pnlBrowser.Location = new Point(195, 0);
+            pnlBrowser.Name = "pnlBrowser";
+            pnlBrowser.Size = new Size(605, 506);
+            pnlBrowser.TabIndex = 0;
             // 
             // btnEnviar
             // 
-            this.btnEnviar.Location = new System.Drawing.Point(12, 375);
-            this.btnEnviar.Name = "btnEnviar";
-            this.btnEnviar.Size = new System.Drawing.Size(177, 38);
-            this.btnEnviar.TabIndex = 2;
-            this.btnEnviar.Text = "Enviar Un Mensaje";
-            this.btnEnviar.UseVisualStyleBackColor = true;
-            this.btnEnviar.Click += new System.EventHandler(this.btnEnviar_Click);
-            // 
-            // iTelefono
-            // 
-            this.iTelefono.Location = new System.Drawing.Point(12, 212);
-            this.iTelefono.Name = "iTelefono";
-            this.iTelefono.Size = new System.Drawing.Size(177, 23);
-            this.iTelefono.TabIndex = 0;
+            btnEnviar.Location = new Point(12, 394);
+            btnEnviar.Name = "btnEnviar";
+            btnEnviar.Size = new Size(177, 38);
+            btnEnviar.TabIndex = 2;
+            btnEnviar.Text = "Enviar Un Mensaje";
+            btnEnviar.UseVisualStyleBackColor = true;
+            btnEnviar.Click += btnEnviar_Click;
             // 
             // iMensaje
             // 
-            this.iMensaje.Location = new System.Drawing.Point(12, 256);
-            this.iMensaje.Multiline = true;
-            this.iMensaje.Name = "iMensaje";
-            this.iMensaje.Size = new System.Drawing.Size(177, 113);
-            this.iMensaje.TabIndex = 1;
+            iMensaje.Location = new Point(12, 256);
+            iMensaje.Multiline = true;
+            iMensaje.Name = "iMensaje";
+            iMensaje.Size = new Size(177, 84);
+            iMensaje.TabIndex = 1;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 194);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 15);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Telefono:";
+            label1.AutoSize = true;
+            label1.Location = new Point(12, 194);
+            label1.Name = "label1";
+            label1.Size = new Size(55, 15);
+            label1.TabIndex = 4;
+            label1.Text = "Telefono:";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 238);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 15);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Mensaje:";
+            label2.AutoSize = true;
+            label2.Location = new Point(12, 238);
+            label2.Name = "label2";
+            label2.Size = new Size(54, 15);
+            label2.TabIndex = 5;
+            label2.Text = "Mensaje:";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(103, 15);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Tiempo de Espera:";
+            label3.AutoSize = true;
+            label3.Location = new Point(16, 9);
+            label3.Name = "label3";
+            label3.Size = new Size(103, 15);
+            label3.TabIndex = 6;
+            label3.Text = "Tiempo de Espera:";
             // 
             // iTiempo
             // 
-            this.iTiempo.Location = new System.Drawing.Point(139, 7);
-            this.iTiempo.Name = "iTiempo";
-            this.iTiempo.Size = new System.Drawing.Size(50, 23);
-            this.iTiempo.TabIndex = 7;
-            this.iTiempo.TabStop = false;
+            iTiempo.Location = new Point(139, 7);
+            iTiempo.Name = "iTiempo";
+            iTiempo.Size = new Size(50, 23);
+            iTiempo.TabIndex = 7;
+            iTiempo.TabStop = false;
             // 
             // lblMensaje
             // 
-            this.lblMensaje.BackColor = System.Drawing.Color.GreenYellow;
-            this.lblMensaje.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblMensaje.Location = new System.Drawing.Point(12, 426);
-            this.lblMensaje.Name = "lblMensaje";
-            this.lblMensaje.Size = new System.Drawing.Size(177, 23);
-            this.lblMensaje.TabIndex = 8;
-            this.lblMensaje.Text = "Procesando...";
-            this.lblMensaje.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            lblMensaje.BackColor = Color.GreenYellow;
+            lblMensaje.BorderStyle = BorderStyle.FixedSingle;
+            lblMensaje.Location = new Point(12, 435);
+            lblMensaje.Name = "lblMensaje";
+            lblMensaje.Size = new Size(177, 23);
+            lblMensaje.TabIndex = 8;
+            lblMensaje.Text = "Procesando...";
+            lblMensaje.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // openFileExcel
+            // 
+            openFileExcel.AddExtension = false;
+            openFileExcel.Filter = "Excel files (*.xlsx)|*.xlsx";
+            openFileExcel.Title = "Seleccione Archivo Excel";
+            // 
+            // cExcelSelect
+            // 
+            cExcelSelect.Location = new Point(12, 108);
+            cExcelSelect.Name = "cExcelSelect";
+            cExcelSelect.Size = new Size(177, 23);
+            cExcelSelect.TabIndex = 9;
+            cExcelSelect.Text = "Seleccione Archivo Excel";
+            cExcelSelect.UseVisualStyleBackColor = true;
+            cExcelSelect.Click += cExcelSelect_Click;
+            // 
+            // iTelefono
+            // 
+            iTelefono.Location = new Point(12, 212);
+            iTelefono.Name = "iTelefono";
+            iTelefono.Size = new Size(177, 23);
+            iTelefono.TabIndex = 0;
+            // 
+            // iArchivo
+            // 
+            iArchivo.Location = new Point(12, 79);
+            iArchivo.Name = "iArchivo";
+            iArchivo.Size = new Size(177, 23);
+            iArchivo.TabIndex = 10;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(12, 61);
+            label4.Name = "label4";
+            label4.Size = new Size(81, 15);
+            label4.TabIndex = 11;
+            label4.Text = "Archivo Excel:";
+            // 
+            // cSiguiente
+            // 
+            cSiguiente.Location = new Point(121, 137);
+            cSiguiente.Name = "cSiguiente";
+            cSiguiente.Size = new Size(68, 24);
+            cSiguiente.TabIndex = 12;
+            cSiguiente.Text = "Siguiente";
+            cSiguiente.UseVisualStyleBackColor = true;
+            cSiguiente.Click += cSiguiente_Click;
+            // 
+            // cAnterior
+            // 
+            cAnterior.Location = new Point(12, 137);
+            cAnterior.Name = "cAnterior";
+            cAnterior.Size = new Size(68, 24);
+            cAnterior.TabIndex = 13;
+            cAnterior.Text = "Anterior";
+            cAnterior.UseVisualStyleBackColor = true;
+            cAnterior.Click += cAnterior_Click;
+            // 
+            // iContador
+            // 
+            iContador.Location = new Point(79, 138);
+            iContador.Name = "iContador";
+            iContador.Size = new Size(43, 23);
+            iContador.TabIndex = 14;
+            iContador.Text = "0/0";
+            iContador.TextAlign = HorizontalAlignment.Center;
             // 
             // FormSendWhatsApp
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.lblMensaje);
-            this.Controls.Add(this.iTiempo);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.iMensaje);
-            this.Controls.Add(this.iTelefono);
-            this.Controls.Add(this.btnEnviar);
-            this.Controls.Add(this.pnlBrowser);
-            this.Name = "FormSendWhatsApp";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Envio de WhatsApp Escritorio";
-            this.Load += new System.EventHandler(this.FormSendWhatsApp_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.iTiempo)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 506);
+            Controls.Add(iContador);
+            Controls.Add(cAnterior);
+            Controls.Add(cSiguiente);
+            Controls.Add(label4);
+            Controls.Add(iArchivo);
+            Controls.Add(cExcelSelect);
+            Controls.Add(lblMensaje);
+            Controls.Add(iTiempo);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(iMensaje);
+            Controls.Add(iTelefono);
+            Controls.Add(btnEnviar);
+            Controls.Add(pnlBrowser);
+            Name = "FormSendWhatsApp";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Envio de WhatsApp Escritorio";
+            Load += FormSendWhatsApp_Load;
+            ((System.ComponentModel.ISupportInitialize)iTiempo).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private Panel pnlBrowser;
         private Button btnEnviar;
-        private TextBox iTelefono;
         private TextBox iMensaje;
         private Label label1;
         private Label label2;
         private Label label3;
         private NumericUpDown iTiempo;
         private Label lblMensaje;
+        private OpenFileDialog openFileExcel;
+        private Button cExcelSelect;
+        private TextBox iTelefono;
+        private TextBox iArchivo;
+        private Label label4;
+        private Button cSiguiente;
+        private Button cAnterior;
+        private TextBox iContador;
     }
 }
