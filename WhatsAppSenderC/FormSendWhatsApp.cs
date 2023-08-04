@@ -34,9 +34,6 @@ namespace WhatsAppSenderC
                 iTelefono.Text = "549" + caso.Telefono;
 
                 iMensaje.Text = "Hola " + caso.Nombre + "\n " ;
-                iMensaje.Text += "Soy Pablo Parola de Vicentinos y \n";
-                iMensaje.Text += "este es el Link para la credencial virtual. \n" ;
-                iMensaje.Text += "Cualquier duda puede comunicarse conmigo. \n" ;
                 iMensaje.Text += "Muchas Gracias! \n" ;
                 iMensaje.Text += caso.Link + "\n " ; 
 
@@ -132,7 +129,7 @@ namespace WhatsAppSenderC
                 iArchivo.Text = openFileExcel.FileName;
                 int fila = 4;
                 string celda;
-                string socio;
+                string codigo;
                 string nombre;
                 string link;
                 string telefono;
@@ -150,10 +147,10 @@ namespace WhatsAppSenderC
                     {
                         while (true)
                         {
-                            celda = "A" + fila.ToString(); socio = sheet.Range[celda].Value;
-                            if (socio == "")
+                            celda = "A" + fila.ToString(); codigo = sheet.Range[celda].Value;
+                            if (codigo == "")
                                 break;
-                            if (socio.Contains("Cantidad"))
+                            if (codigo.Contains("Cantidad"))
                                 break;
 
                             celda = "B" + fila.ToString(); nombre = sheet.Range[celda].Value;
@@ -161,7 +158,7 @@ namespace WhatsAppSenderC
                             celda = "F" + fila.ToString(); telefono = sheet.Range[celda].Value;
 
                             var caso = new Caso();
-                            caso.Codigo = socio;
+                            caso.Codigo = codigo;
                             caso.Nombre = nombre;
                             caso.Telefono = telefono;
                             caso.Link = link;
